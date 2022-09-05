@@ -1,14 +1,13 @@
-import { useState } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import './app.scss';
-import { HomePage } from './pages/HomePage/HomePage';
+import { LandingPage } from './pages/LandingPage/LandingPage';
 import { Register } from './pages/Register/Register';
 import { Login } from './pages/Login/Login';
 
 function App() {
   return (
     <>
-      <Register />
+      <LandingPage/>
     </>
   );
 }
