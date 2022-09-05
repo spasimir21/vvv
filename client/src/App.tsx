@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import './app.scss';
+import { LandingPage } from './pages/LandingPage/LandingPage';
+import { Register } from './pages/Register/Register';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <p>{count}</p>
-      <button className='button' onClick={() => setCount(count + 1)}>
-        Add
-      </button>
+      <LandingPage/>
     </>
   );
 }
