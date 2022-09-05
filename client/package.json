@@ -23,12 +23,14 @@
     "@capacitor/android": "^4.1.0",
     "@capacitor/cli": "^4.1.0",
     "@capacitor/core": "^4.1.0",
+    "@capacitor/storage": "^1.2.5",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.5.0",
