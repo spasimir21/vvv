@@ -1,0 +1,15 @@
+{
+  "appId": "com.datsdevvv.fridge",
+  "appName": "Fridge App",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "server": {
+    "url": "http://192.168.3.13:1234",
+    "cleartext": true
+  }
+}

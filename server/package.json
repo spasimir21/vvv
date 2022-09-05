@@ -1,12 +1,27 @@
 {
-  "name": "server",
+  "name": "fridge-app-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "devStart": "nodemon main.js",
+    "start": "node main.js"
   },
-  "keywords": [],
-  "author": "",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spasimir21/vvv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spasimir21/vvv/issues"
+  },
+  "homepage": "https://github.com/spasimir21/vvv#readme",
+  "author": "DATSDEVVV",
   "license": "ISC"
 }
