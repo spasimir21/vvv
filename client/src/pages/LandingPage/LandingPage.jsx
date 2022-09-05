@@ -1,11 +1,12 @@
 import './HomePage.scss';
+import image from  '../../assets/landing-image.png';
 
 export const HomePage = () => {
     return (
         <section className="home-page">
-            <section className="image">
+            <img src={image} className="image">
 
-            </section>
+            </img>
             <h1>Welcome to App Name</h1>
             <button>Get started</button>
         </section>
