@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import React from 'react';
 import './HomePage.scss';
 
-function Homepage() {
-  return (
-    <>
-      {/* CODE */}
-    </>
-  );
-}
+export const HomePage = () => {
+    return (
+        <section className="home-page">
+            <section className="image">
 
-export { Homepage };
+            </section>
+            <h1>Welcome to App Name</h1>
+            <button>Get started</button>
+        </section>
+    )
+}
