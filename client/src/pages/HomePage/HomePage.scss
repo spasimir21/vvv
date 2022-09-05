@@ -1,52 +1,8 @@
 .footer{
   background:
-    radial-gradient(40px at top, #0000 97%, blue) top;
+    radial-gradient(40px at top, #0000 97%, #F3F3F3) top;
   background-repeat: no-repeat;
 }
-.navbar_icon_1{
-  list-style: none;
-  position: fixed;
-width: 36px;
-height: 36px;
-left: 5vw;
-bottom: 11px;
-background: #C6C6C6;
-}
-.navbar_icon_2{
-  list-style: none;
-  position: fixed;
-width: 36px;
-height: 36px;
-left: calc(5vw + 36px + 5vw);
-bottom: 11px;
-background: #C6C6C6;
-}
-.navbar_icon_4{
-  list-style: none;
-  position: fixed;
-width: 36px;
-height: 36px;
-right: 5vw;
-bottom: 11px;
-background: #C6C6C6;
-}
-.navbar_icon_3{
-  list-style: none;
-  position: fixed;
-width: 36px;
-height: 36px;
-right: calc(5vw + 36px + 5vw);
-bottom: 11px;
-background: #C6C6C6;
-}
-.circle_icon{
-  list-style: none;
-  position: fixed;
-  transform: translate(-50%, -50%);
-width: 71px;
-height: 71px;
-left: 50vw;
-bottom: 0;
-border-radius: 50px;
-background: #BFBFBF;
+.teydh{
+  background-color: green;
 }
