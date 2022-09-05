@@ -1,13 +1,13 @@
-import { HomePage } from './pages/HomePage/HomePage';
+import { LandingPage } from './pages/LandingPage/LandingPage';
 import { Register } from './pages/Register/Register';
-import { useState } from 'react';
-import React from 'react';
+import { Login } from './pages/Login/Login';
+import React, { useState } from 'react';
 import './app.scss';
 
 function App() {
   return (
     <>
-      <HomePage />
+      <LandingPage />
     </>
   );
 }
