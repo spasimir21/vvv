@@ -1,6 +1,7 @@
 import { scanBarcode, getProductDetails, Product } from '../lib/barcodeScanner';
+import React from 'react';
 import { useState } from 'react';
-import './app.scss';
+// import './app.scss';
 
 async function scanProduct() {
   const barcode = await scanBarcode();

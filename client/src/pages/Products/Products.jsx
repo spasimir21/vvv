@@ -18,7 +18,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import './HomePage.scss';
+import './Products.scss';
 import Box from '@mui/material/Box';
 import SvgIcon from '@mui/material/SvgIcon';
 
