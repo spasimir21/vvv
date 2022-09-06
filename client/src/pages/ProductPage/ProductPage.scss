@@ -1,31 +1,31 @@
 $defalutfont: 'Roboto';
 $main_color: #336559;
-$seconary_color: #EF864F;
-$third_color: #F7CF7F;
+$seconary_color: #ef864f;
+$third_color: #f7cf7f;
 
-*{
-    font-family: $defalutfont;
+* {
+  font-family: $defalutfont;
 }
 
-body{
-    background-color: black;
-}
-.productsTitle{
-    margin-top: 117px;
-    margin-left: 28px;
-    color: $main_color;
-    font-size: 24px;
-    font-weight: 600;
-    font-stretch: normal;
+// body {
+// background-color: black;
+// }
+.productsTitle {
+  //   margin-top: 117px;
+  //   margin-left: 28px;
+  color: $main_color;
+  font-size: 24px;
+  font-weight: 600;
+  font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   text-align: left;
 }
-.products{
-    margin-top: 34px;
+.products {
+  margin-top: 34px;
 }
-img{
-    width: 57px;
-    height: 56px;
+img {
+  width: 57px;
+  height: 56px;
 }

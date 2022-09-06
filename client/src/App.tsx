@@ -8,23 +8,34 @@ import { theme } from './theme';
 import React from 'react';
 import './app.scss';
 import { HistoryPage } from './pages/HistoryPage/HistoryPage';
- import { Navigation } from './components/NavBar/NavBar';
-import { ProductsPage } from './pages/ProductPage/ProductPage';
+import { Navigation } from './components/NavBar/NavBar';
+import { RegisterPage } from './pages/RegisterPage/RegisterPage';
 import { Login } from './pages/Login/Login';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
+  // return (
+  //   <>
+  //     {/* <div onClick={() => setIsShown(!isShown)}>
+  //       Text
+  //       <div className={isShown ? 'show' : 'notshown'}>Sub Text</div>
+  //     </div> */}
+  //     <ThemeProvider theme={theme}>
+  //       <ProductsPage />
+  //       <Navigation />
+  //     </ThemeProvider>
+  //     {/* <ScannerTest /> */}
+  //   </>
+  // );
+
   return (
-    <>
-      {/* <div onClick={() => setIsShown(!isShown)}>
-        Text
-        <div className={isShown ? 'show' : 'notshown'}>Sub Text</div>
-      </div> */}
-        <ThemeProvider theme={theme}>
-      <ProductsPage />
-       <Navigation />
-      </ThemeProvider> 
-     {/* <ScannerTest /> */}
-</>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route path='/' element={<RegisterPage />}></Route>
+        </Routes>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 

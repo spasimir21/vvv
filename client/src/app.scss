@@ -1,10 +1,25 @@
-.notshown{
-    position: absolute;
-    top: 0;
-    opacity: 0;
-    transition: 0.6s;
+.notshown {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: 0.6s;
 }
-.show{
-    opacity: 1;
-    transition: 0.3s;
+.show {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+* {
+  font-family: 'Roboto';
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
 }
