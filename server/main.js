@@ -1,4 +1,4 @@
-const { createEndpoint } = require('./endpoint.js');
+const { userRouter } = require('./routes/user.js');
 const config = require('./config.js');
 const express = require('express');
 const cors = require('cors');
@@ -12,5 +12,7 @@ app.use(
     extended: true
   })
 );
+
+app.use('/user', userRouter);
 
 app.listen(config.port, () => console.log(`Server is running on port ${config.port}`));

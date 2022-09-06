@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <HomePage />
+        <APITest />
       </ThemeProvider>
     </>
   );
