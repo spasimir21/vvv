@@ -22,7 +22,6 @@ export const ScanPage = () => {
           fontWeight: "bold",
           fontWeight: 700,
           fontSize: 24,
-          marginBottom: "45px",
           textAlign: "center",
         }}
       >
@@ -39,7 +38,6 @@ export const ScanPage = () => {
       ></Box>
       <Button
         sx={{
-          marginTop: "178px",
           width: "304px",
           height: "70px",
           backgroundColor: "#ffffff",
