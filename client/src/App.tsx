@@ -20,7 +20,7 @@ function App() {
         <div className={isShown ? 'show' : 'notshown'}>Sub Text</div>
       </div> */}
         <ThemeProvider theme={theme}>
-      <ScanPage />
+      <LandingPage />
        {/* <Navigation /> */}
       </ThemeProvider> 
      {/* <ScannerTest /> */}
