@@ -3,19 +3,28 @@ import { Register } from './pages/Register/Register';
 import { HomePage } from './pages/HomePage/HomePage';
 import { ScannerTest } from './test/ScannerTest';
 import { ThemeProvider } from '@mui/material';
-import { Login } from './pages/Login/Login';
 import { APITest } from './test/APITest';
 import { theme } from './theme';
 import React from 'react';
 import './app.scss';
+import { HistoryPage } from './pages/HistoryPage/HistoryPage';
+ import { Navigation } from './components/NavBar/NavBar';
+import { ProductsPage } from './pages/ProductPage/ProductPage';
+import { Login } from './pages/Login/Login';
 
 function App() {
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <APITest />
-      </ThemeProvider>
-    </>
+      {/* <div onClick={() => setIsShown(!isShown)}>
+        Text
+        <div className={isShown ? 'show' : 'notshown'}>Sub Text</div>
+      </div> */}
+        <ThemeProvider theme={theme}>
+      <ProductsPage />
+       <Navigation />
+      </ThemeProvider> 
+     {/* <ScannerTest /> */}
+</>
   );
 }
 

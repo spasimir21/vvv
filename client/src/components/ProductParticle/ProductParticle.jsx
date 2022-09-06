@@ -1,4 +1,5 @@
-import {image} from '../../assets/orange 1.png'
+import image from '../../assets/orange-1.png'
+import './ProductParticle.scss';
 
 export const ProductParticle = () => {
     return(
@@ -8,8 +9,8 @@ export const ProductParticle = () => {
             <p className="name">
                 Orange
             </p>
-            <p className="expires">
-                Expires in
+            <p className="price">
+                1.34 lv
             </p>
         </div>
         <p className="days">

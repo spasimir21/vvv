@@ -1,4 +1,10 @@
-html,
-body {
-  margin: 0px;
+.notshown{
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: 0.6s;
+}
+.show{
+    opacity: 1;
+    transition: 0.3s;
 }
