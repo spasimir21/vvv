@@ -7,13 +7,15 @@ import { HomePage } from './pages/HomePage/HomePage';
 import { theme } from './theme';
 import { ThemeProvider } from '@mui/material';
 import { ScannerTest } from './test/ScannerTest';
+import {Footer} from './components/Footer/Footer'
+import { ScanPage } from './pages/ScanPage/ScanPage';
 
 function App() {
   return (
     <>
 
        <ThemeProvider theme={theme}>
-      <HomePage />
+      <ScanPage />
       </ThemeProvider> 
      {/* <ScannerTest /> */}
 </>
