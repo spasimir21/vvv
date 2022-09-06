@@ -18,19 +18,23 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import './Products.scss';
 import Box from '@mui/material/Box';
 import SvgIcon from '@mui/material/SvgIcon';
-
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Switch from '@mui/material/Switch';
+import Paper from '@mui/material/Paper';
+import Fade from '@mui/material/Fade';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 const StyledFab = styled(Fab)({
-  position: 'absolute',
-  zIndex: 1,
-  top: -30,
-  left: 0,
-  right: 0,
-  margin: '0 auto',
-});
+    position: 'absolute',
+    zIndex: 1,
+    top: -30,
+    left: 0,
+    right: 0,
+    margin: '0 auto',
+  });
 
 function Home(props) {
     return (
@@ -172,8 +176,9 @@ function Home(props) {
 
 
   function Profile(props) {
+
     return (
-      <SvgIcon {...props}>
+      <SvgIcon  {...props}>
        <svg
     id="Layer_1"
     data-name="Layer 1"
@@ -199,37 +204,31 @@ function Home(props) {
     );
   }
 
-
-
-  
-
-
-
-const HomePage = () => {
-  return (
-    <React.Fragment>
-      <CssBaseline />
-      <AppBar position="fixed"  sx={{ top: 'auto', bottom: 0, backgroundColor: 'transparent' }} elevation={0} className="footer">
-        <Toolbar>
-          <IconButton color="inherit" aria-label="open drawer">
-            <Home />
-          </IconButton>
-          <IconButton color="inherit" aria-label="open drawer">
-            <Products />
-          </IconButton>
-          <StyledFab aria-label="add" color="primary">
-            <Scan color="secondary" />
-          </StyledFab>
-          <Box sx={{ flexGrow: 1 }} />
-          <IconButton color="inherit" >
-            <Stats color='primary'/>
-          </IconButton>
-          <IconButton color="inherit">
-            <Profile />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-    </React.Fragment>
-  );
-}
-export {HomePage};
+const Navigation = () => {
+    return (
+      <React.Fragment>
+        <CssBaseline />
+        <AppBar position="fixed"  sx={{ top: 'auto', bottom: 0, backgroundColor: 'transparent' }} elevation={0} className="footer">
+          <Toolbar>
+            <IconButton color="inherit" aria-label="open drawer">
+              <Home />
+            </IconButton>
+            <IconButton color="inherit" aria-label="open drawer">
+              <Products />
+            </IconButton>
+            <StyledFab aria-label="add" color="primary">
+              <Scan color="secondary" />
+            </StyledFab>
+            <Box sx={{ flexGrow: 1 }} />
+            <IconButton color="inherit" >
+              <Stats color='primary'/>
+            </IconButton>
+            <IconButton color="inherit">
+              <Profile />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+      </React.Fragment>
+    );
+  }
+export { Navigation };
