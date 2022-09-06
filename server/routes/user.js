@@ -4,4 +4,4 @@ const usersRouter = express.Router();
 
 usersRouter.post('/register', (req, res) => {});
 
-export { usersRouter };
+module.exports = { usersRouter };

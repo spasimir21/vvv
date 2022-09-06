@@ -2,7 +2,7 @@ import { APIRequest, RequestResponse } from '../lib/api/request';
 import { APIContext } from '../contexts/APIContext';
 import { useContext, useState } from 'react';
 
-function useHook<TParams, TResult>(
+function useRequest<TParams, TResult>(
   request: APIRequest<TParams, TResult>
 ): [RequestResponse<TResult> | null, boolean, (params: TParams) => void] {
   const api = useContext(APIContext);
@@ -20,3 +20,5 @@ function useHook<TParams, TResult>(
 
   return [result, loading, send];
 }
+
+export { useRequest };
