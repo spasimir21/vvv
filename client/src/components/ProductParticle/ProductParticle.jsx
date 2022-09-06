@@ -1,4 +1,5 @@
-import {image} from '../../assets/orange 1.png'
+import image from '../../assets/orange-1.png'
+import './ProductParticle.scss';
 
 export const ProductParticle = () => {
     return(

@@ -8,12 +8,13 @@ import { APITest } from './test/APITest';
 import { theme } from './theme';
 import React from 'react';
 import './app.scss';
+import { HistoryPage } from './pages/HistoryPage/HistoryPage';
 
 function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <HomePage />
+        <HistoryPage />
       </ThemeProvider>
     </>
   );
