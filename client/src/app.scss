@@ -8,3 +8,16 @@
     opacity: 1;
     transition: 0.3s;
 }
+
+html, body, #root {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+}
+
+* {
+    font-family: "Roboto";
+    box-sizing: border-box;
+}

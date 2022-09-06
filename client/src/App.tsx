@@ -11,7 +11,7 @@ import { HistoryPage } from './pages/HistoryPage/HistoryPage';
  import { Navigation } from './components/NavBar/NavBar';
 import { ProductsPage } from './pages/ProductPage/ProductPage';
 import { Login } from './pages/Login/Login';
-
+import {ScanPage} from './pages/ScanPage/ScanPage'
 function App() {
   return (
     <>
@@ -20,8 +20,8 @@ function App() {
         <div className={isShown ? 'show' : 'notshown'}>Sub Text</div>
       </div> */}
         <ThemeProvider theme={theme}>
-      <ProductsPage />
-       <Navigation />
+      <ScanPage />
+       {/* <Navigation /> */}
       </ThemeProvider> 
      {/* <ScannerTest /> */}
 </>
