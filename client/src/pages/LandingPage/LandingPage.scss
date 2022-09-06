@@ -1,53 +1,41 @@
-// @font-face {
-//   
-//   src: url("../../assets/fonts/Inter-VariableFont_slnt,wght.ttf"),
-//     url("../../assets/fonts/Inter-VariableFont_slnt,wght.ttf"); //format('truetype'), url('fonts/EntezareZohoor2.svg') format('svg');
-//   font-weight: normal;
-//   font-style: normal;
-// }
-*{
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  align-items: center;
+}
+.landing-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 21px;
+}
+.landing-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.landing-p-container {
+  max-width: 224px;
+  font-style: normal;
   font-family: "Roboto";
-}
-.home-page{
-    margin: 130px 40px 0px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.home-page .image {
-  width: 304px;
-  height: 256px;
-  margin-bottom: 80px;
-  //background: #d9d9d9;
-}
-.home-page h1 {
-  width: 191px;
-  height: 78px;
-  margin-bottom: 104px;
-  
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 39px;
+  font-weight: 300;
+  line-height: 14px;
   text-align: center;
-
-  color: #000000;
+  color: #f08d5a;
 }
-.home-page button {
-    width: 224px;
-    height: 45px;
-
+.landing-page a {
+  display: block;
+  text-align: center;
+  padding: 20px 60px;
   background: #336559;
-  border: none;
   border-radius: 8px;
-  
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
+  text-decoration: none;
+  font-size: 19px;
   line-height: 17px;
-color: #F6CF7F;
-  /* identical to box height */
 
-  text-align: center;
-
+  color: #f6cf7f;
 }
