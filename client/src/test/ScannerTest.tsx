@@ -1,6 +1,5 @@
 import { scanBarcode, getProductDetails, Product } from '../lib/barcodeScanner';
-import { useState } from 'react';
-import './app.scss';
+import React, { useState } from 'react';
 
 async function scanProduct() {
   const barcode = await scanBarcode();
@@ -9,7 +8,7 @@ async function scanProduct() {
 }
 
 function ScannerTest() {
-  const [product, setProduct] = useState<Product>(null);
+  const [product, setProduct] = useState<Product | null>(null);
 
   return (
     <>

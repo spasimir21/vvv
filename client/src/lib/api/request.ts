@@ -15,9 +15,9 @@ interface FailedRequestResponse {
   error: string;
 }
 
-type RequestResponse<TResult> = Promise<SuccessfulRequestResponse<TResult> | FailedRequestResponse>;
+type RequestResponse<TResult> = SuccessfulRequestResponse<TResult> | FailedRequestResponse;
 
-type APIRequest<TParams, TResult> = (api: APIData, params: TParams) => RequestResponse<TResult>;
+type APIRequest<TParams, TResult> = (api: APIData, params: TParams) => Promise<RequestResponse<TResult>>;
 
 function createRequest<TParams, TResult>(options: RequestOptions<TParams, TResult>): APIRequest<TParams, TResult> {
   return async (api: APIData, params: TParams) => {
@@ -37,4 +37,4 @@ function createRequest<TParams, TResult>(options: RequestOptions<TParams, TResul
   };
 }
 
-export { APIData, createRequest };
+export { APIData, createRequest, APIRequest, RequestResponse };
