@@ -6,6 +6,8 @@ export const HistoryPage = () => {
         <section className="history-page">
             <h2>History</h2>
             <ProductParticle/>
+            <ProductParticle/>
+            <ProductParticle/>
         </section>
     )
 }
