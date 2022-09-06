@@ -1,3 +1,4 @@
+const { productRouter } = require('./routes/product.js');
 const { userRouter } = require('./routes/user.js');
 const config = require('./config.js');
 const express = require('express');
@@ -13,6 +14,7 @@ app.use(
   })
 );
 
+app.use('/product', productRouter);
 app.use('/user', userRouter);
 
 app.listen(config.port, () => console.log(`Server is running on port ${config.port}`));

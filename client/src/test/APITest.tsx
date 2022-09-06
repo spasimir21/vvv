@@ -3,14 +3,18 @@ import { useRequest } from '../hooks/useRequest';
 import React, { useState } from 'react';
 
 function APITest() {
-  const [result, loading, send] = useRequest(createRequest<any, any>({ path: '/user/register', method: 'POST' }));
+  const [result, loading, send] = useRequest(createRequest<any, any>({ path: '/product/update', method: 'PATCH' }));
+
+  const params = {
+    productId: 1,
+    price: 7.5,
+    expirationDate: Date.now()
+  };
 
   return (
     <>
       <p>{loading ? 'Loading...' : JSON.stringify(result)}</p>
-      <button onClick={() => send({ email: 'spasimir.pavlov@gmail.com', username: 'Spasimir Pavlov', password: '123456789' })}>
-        Send
-      </button>
+      <button onClick={() => send(params)}>Send</button>
     </>
   );
 }
