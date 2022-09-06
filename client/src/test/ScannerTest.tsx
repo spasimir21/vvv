@@ -10,7 +10,7 @@ async function scanProduct() {
 }
 
 function ScannerTest() {
-  const [product, setProduct] = useState<Product>(null);
+  const [product, setProduct] = useState<Product | null>(null);
 
   return (
     <>
