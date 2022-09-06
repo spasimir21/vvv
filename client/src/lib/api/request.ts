@@ -22,16 +22,21 @@ type APIRequest<TParams, TResult> = (api: APIData, params: TParams) => Promise<R
 function createRequest<TParams, TResult>(options: RequestOptions<TParams, TResult>): APIRequest<TParams, TResult> {
   return async (api: APIData, params: TParams) => {
     try {
-      const req = await fetch(`${api.url}${options.path}`, {
+      const requestInit: RequestInit = {
         method: options.method,
-        body: JSON.stringify(params),
-        headers: new Headers({
-          Token: api.token
-        })
-      });
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      };
+
+      if (api.token != null) requestInit.headers['Token'] = api.token;
+      if (options.method != 'GET' && options.method != 'HEAD') requestInit.body = JSON.stringify(params);
+
+      const req = await fetch(`${api.url}${options.path}`, requestInit);
 
       return await req.json();
-    } catch {
+    } catch (error) {
+      console.log(error);
       return { success: false, error: 'Network Error' };
     }
   };
