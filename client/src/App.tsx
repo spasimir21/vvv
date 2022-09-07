@@ -9,7 +9,7 @@ import React from 'react';
 import './app.scss';
 import { HistoryPage } from './pages/HistoryPage/HistoryPage';
 import { Navigation } from './components/NavBar/NavBar';
-import { RegisterPage } from './pages/RegisterPage/RegisterPage';
+import { ProductDetailsPage } from './pages/ProductDetailsPage/ProductDetailsPage';
 import { Login } from './pages/Login/Login';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -32,7 +32,7 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route path='/' element={<RegisterPage />}></Route>
+          <Route path='/' element={<ProductDetailsPage />}></Route>
         </Routes>
       </ThemeProvider>
     </BrowserRouter>
