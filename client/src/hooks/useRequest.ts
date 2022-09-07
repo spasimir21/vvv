@@ -4,7 +4,7 @@ import { useContext, useState } from 'react';
 
 function useRequest<TParams, TResult>(
   request: APIRequest<TParams, TResult>
-): [RequestResponse<TResult> | null, boolean, (params: TParams) => void] {
+): [RequestResponse<TResult> | null, boolean, (params: TParams) => Promise<RequestResponse<TResult>>] {
   const api = useContext(APIContext);
 
   const [result, setResult] = useState<RequestResponse<TResult> | null>(null);
@@ -12,10 +12,14 @@ function useRequest<TParams, TResult>(
 
   const send = (params: TParams) => {
     setLoading(true);
-    request(api, params).then(_result => {
+    const req = request(api, params);
+
+    req.then(_result => {
       setResult(_result);
       setLoading(false);
     });
+
+    return req;
   };
 
   return [result, loading, send];

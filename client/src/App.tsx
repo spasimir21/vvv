@@ -1,41 +1,46 @@
+import { ProductDetailsPage } from './pages/ProductDetailsPage/ProductDetailsPage';
 import { LandingPage } from './pages/LandingPage/LandingPage';
-import { Register } from './pages/Register/Register';
+import { ProductsPage } from './pages/ProductPage/ProductPage';
 import { HomePage } from './pages/HomePage/HomePage';
-import { ScannerTest } from './test/ScannerTest';
+import { ScanPage } from './pages/ScanPage/ScanPage';
 import { ThemeProvider } from '@mui/material';
 import { APITest } from './test/APITest';
+import { api, onTokenLoaded } from './lib/api/api';
 import { theme } from './theme';
-import React from 'react';
+import React, { useEffect } from 'react';
 import './app.scss';
 import { HistoryPage } from './pages/HistoryPage/HistoryPage';
 import { Navigation } from './components/NavBar/NavBar';
-import { ProductDetailsPage } from './pages/ProductDetailsPage/ProductDetailsPage';
-import { Login } from './pages/Login/Login';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { LoginPage } from './pages/LoginPage/LoginPage';
+import { RegisterPage } from './pages/RegisterPage/RegisterPage';
+import { useNavigate, Routes, Route } from 'react-router-dom';
+import { CapacitorKeepScreenOn } from 'capacitor-keep-screen-on';
+
+CapacitorKeepScreenOn.enable(); // Demo only
 
 function App() {
-  // return (
-  //   <>
-  //     {/* <div onClick={() => setIsShown(!isShown)}>
-  //       Text
-  //       <div className={isShown ? 'show' : 'notshown'}>Sub Text</div>
-  //     </div> */}
-  //     <ThemeProvider theme={theme}>
-  //       <ProductsPage />
-  //       <Navigation />
-  //     </ThemeProvider>
-  //     {/* <ScannerTest /> */}
-  //   </>
-  // );
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    onTokenLoaded.then(() => {
+      console.log(api.token);
+      if (api.token == null || api.token == 'null') navigate('/landing');
+      else navigate('/products');
+    });
+  }, []);
 
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <Routes>
-          <Route path='/' element={<ProductDetailsPage />}></Route>
-        </Routes>
-      </ThemeProvider>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <Routes>
+        <Route path='/landing' element={<LandingPage />} />
+        <Route path='/register' element={<RegisterPage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/products' element={<ProductsPage />} />
+        <Route path='/history' element={<HistoryPage />} />
+        <Route path='/scan' element={<ScanPage />} />
+        <Route path='/details/:barcode' element={<ProductDetailsPage />} />
+      </Routes>
+    </ThemeProvider>
   );
 }
 

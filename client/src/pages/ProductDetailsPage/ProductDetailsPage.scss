@@ -17,13 +17,12 @@ $main_color: #336559;
 }
 
 .product-image {
-  background-color: #d9d9d9;
+  // background-color: #d9d9d9;
   width: 200px;
   height: 200px;
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  background-image: url('https://minamart.eu/wp-content/uploads/2021/11/%D0%BD%D0%B0%D1%82%D1%83%D1%80%D0%B0%D0%BB%D0%BD%D0%B0-%D0%BC%D0%B8%D0%BD%D0%B5%D1%80%D0%B0%D0%BB%D0%BD%D0%B0-%D0%B2%D0%BE%D0%B4%D0%B0-%D0%B2%D0%B5%D0%BB%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4-500-%D0%BC%D0%BB-natural-mineral-water-500-ml.jpg');
 }
 
 .price-container {
@@ -36,7 +35,7 @@ $main_color: #336559;
 
 .price-container input {
   width: 80%;
-  padding: 6px 8px;
+  padding: 6px 12px;
   border-radius: 8px;
   border: 1px solid $main_color;
   outline: none;
@@ -46,11 +45,61 @@ $main_color: #336559;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  gap: 50px;
+  gap: 10px;
 }
 
 .product-input {
   display: flex;
   flex-flow: column nowrap;
   align-items: left;
+}
+
+.used {
+  //     width: 16px;
+  //   height: 12px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-direction: row nowrap;
+  padding: 10px 15px;
+  background-color: #41a858;
+  border-radius: 8px;
+  color: white;
+  width: 40vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  margin: 8px;
+}
+.delete {
+  //     width: 16px;
+  //   height: 12px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-direction: row nowrap;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: #eb574c;
+  width: 40vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  margin: 8px;
+  border: 1px solid #eb574c;
+}
+.bin {
+  width: 12px;
+  height: 14px;
+}
+.tick {
+  width: 16px;
+  height: 12px;
 }

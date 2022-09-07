@@ -28,7 +28,7 @@ userRouter.post(
           (err, result) => {
             if (err || result == null) return reject('');
             const token = jsonwebtoken.sign({ uid: result.id, username: params.username }, config.tokenKey);
-            resolve(token);
+            resolve({ token });
           }
         );
       })
@@ -50,7 +50,7 @@ userRouter.post(
           if (err || result == null) return reject('');
           if (!bcrypt.compareSync(params.password, result.password)) return reject('');
           const token = jsonwebtoken.sign({ uid: result.id, username: result.username }, config.tokenKey);
-          resolve(token);
+          resolve({ token });
         });
       })
   )

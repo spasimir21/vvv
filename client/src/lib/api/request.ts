@@ -29,7 +29,7 @@ function createRequest<TParams, TResult>(options: RequestOptions<TParams, TResul
         }
       };
 
-      if (api.token != null) requestInit.headers['Token'] = api.token;
+      if (api.token != null && api.token != 'undefined' && api.token != 'null') requestInit.headers['Token'] = api.token;
       if (options.method != 'GET' && options.method != 'HEAD') requestInit.body = JSON.stringify(params);
 
       const req = await fetch(`${api.url}${options.path}`, requestInit);

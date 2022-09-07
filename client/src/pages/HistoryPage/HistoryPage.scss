@@ -1,14 +1,45 @@
-// @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+$defalutfont: 'Roboto';
+$main_color: #336559;
+$seconary_color: #ef864f;
+$third_color: #f7cf7f;
+$background_color: #f9f9f9;
 
-// .history-page h2 {
-//   font-family: "Roboto";
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 20px;
-//   line-height: 24px;
-//   color: #33655A;
-//   padding-bottom: 31px;
-// }
-// .history-page{
-//     padding: 117px 28px 0px 28px;
-// }
+// // body{
+// //     background-color: black;
+// // }
+// // .productsTitle{
+// //     color: $main_color;
+// //     font-size: 24px;
+// //     font-weight: 600;
+// //     font-stretch: normal;
+// //   font-style: normal;
+// //   line-height: normal;
+// //   letter-spacing: normal;
+// //   text-align: left;
+// // }
+// // img{
+// //     width: 57px;
+// //     height: 56px;
+// // }
+
+.history-page {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 28px;
+  min-height: 100vh;
+  background-color: $background_color;
+  padding: 28px 28px 90px 28px;
+}
+
+.history-page-title {
+  font-size: 20px;
+  color: $main_color;
+  font-weight: 600;
+}
+
+.history-page-list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+  // background-color: black;
+}

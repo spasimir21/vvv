@@ -1,8 +1,27 @@
 import { LogoSVGComponent } from '../../components/Svg/LogoSVGComponent';
-import React from 'react';
+import { useRequest } from '../../hooks/useRequest';
+import { loginUser } from '../../lib/api/user';
+import { useNavigate } from 'react-router-dom';
+import { saveToken } from '../../lib/api/api';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './LoginPage.scss';
 
 function LoginPage() {
+  const [loginResult, loading, sendLogin] = useRequest(loginUser);
+  const navigate = useNavigate();
+
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+
+  function login() {
+    sendLogin({ email, password }).then(result => {
+      if (!result.success) return;
+      saveToken(result.result.token);
+      navigate('/products');
+    });
+  }
+
   return (
     <div className='login-page'>
       <div className='login-logo-group'>
@@ -11,16 +30,16 @@ function LoginPage() {
       </div>
       <div className='login-form-container'>
         <div className='login-form-fields'>
-          <input type='text' placeholder='Email' />
-          <input type='text' placeholder='Password' />
+          <input type='text' placeholder='Email' value={email} onChange={event => setEmail(event.target.value)} />
+          <input type='password' placeholder='Password' value={password} onChange={event => setPassword(event.target.value)} />
         </div>
         <div className='login-form-redirection'>
           <p>Don't have an account?</p>
-          <a href=''>Sign Up</a>
+          <Link to='/register'>Sign Up</Link>
         </div>
       </div>
-      <a href='' className='login-button'>
-        Sign In
+      <a className='login-button' onClick={login}>
+        {loading ? '...' : 'Sign In'}
       </a>
     </div>
   );

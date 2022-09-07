@@ -1,24 +1,56 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Product.scss';
 import { IconUsed } from '../../assets/IconUsed';
 import { IconDelete } from '../../assets/IconDelete';
+import { useRequest } from '../../hooks/useRequest';
+import { removeProduct } from '../../lib/api/product';
 
-function Product({ isShown, setIsShown }) {
+function getDayDifference(date) {
+  return Math.ceil((date - Date.now()) / (1000 * 3600 * 24));
+}
 
-    return <div className="product_wrapper"  onClick={() => setIsShown(!isShown)}>
-        <div className="product">
-            <div className="image"><img width="57" height="56" src="https://pingo.bg/Content/products/4313/800-800.jpg" /></div>
-            <div className="product_title">
-                <div className="title">Velingrad water</div>
-                <div className="price">0.90 lv</div>
-            </div>
-            <div className="expire_date">2 days left</div>
+function Product({ isShown, setIsShown, product, onRemove }) {
+  const [_, __, sendRemove] = useRequest(removeProduct);
+
+  useEffect(() => {
+    if (getDayDifference(product.expirationDate) < 1) {
+      sendRemove({ productId: product.id, status: 'thrown' });
+      onRemove();
+    }
+  }, []);
+
+  return (
+    <div className='product_wrapper' onClick={() => setIsShown(!isShown)}>
+      <div className='product'>
+        <div className='image' style={{ backgroundImage: `url('${product.imageUrl}')` }}></div>
+        <div className='product_title'>
+          <div className='title'>{product.name}</div>
+          <div className='price'>{product.price} лв.</div>
         </div>
-        <div className={isShown ? 'show' : 'notshown'}>
-                <div className="used"><IconUsed className="tick"/>Used</div>
-                <div className="delete"><IconDelete className="bin"/>Delete</div>
+        <div className='expire_date'>{getDayDifference(product.expirationDate)} days left</div>
+      </div>
+      <div className={isShown ? 'show' : 'notshown'}>
+        <div
+          className='used'
+          onClick={() => {
+            sendRemove({ productId: product.id, status: 'used' });
+            onRemove();
+          }}>
+          <IconUsed className='tick' />
+          Use
         </div>
+        <div
+          className='delete'
+          onClick={() => {
+            sendRemove({ productId: product.id, status: 'thrown' });
+            onRemove();
+          }}>
+          <IconDelete className='bin' />
+          Throw
+        </div>
+      </div>
     </div>
+  );
 }
 
 export { Product };

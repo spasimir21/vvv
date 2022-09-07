@@ -14,8 +14,9 @@ $background_color: #f9f9f9;
   display: flex;
   flex-direction: row;
   min-height: 88px;
-  justify-content: space-around;
+  justify-items: space-between;
   align-items: center;
+  padding: 5px 15px 5px 5px;
 }
 .product_title {
   flex-direction: column;
@@ -51,7 +52,7 @@ $background_color: #f9f9f9;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  text-align: left;
+  text-align: right !important;
 }
 .notshown {
   height: 0;
@@ -121,4 +122,15 @@ $background_color: #f9f9f9;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+}
+
+.expiration-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: right;
+  text-align: right;
+}
+
+.expiration-container p {
+  margin: 0px;
 }

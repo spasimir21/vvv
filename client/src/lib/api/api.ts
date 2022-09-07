@@ -11,11 +11,13 @@ const api: APIData = {
   token: null
 };
 
-Storage.get({ key: 'token' }).then(result => {
+const onTokenLoaded = Storage.get({ key: 'token' }).then(result => {
   if (result.value != null) api.token = result.value;
 });
 
-api.token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIsInVzZXJuYW1lIjoiU3Bhc2ltaXIgUGF2bG92IiwiaWF0IjoxNjYyNDc1MDE5fQ.RVCa7bniHaJaCjKwtWfOQ_tEYmdHlV9JBozfCeisF3A';
+function saveToken(token: string | null) {
+  api.token = token;
+  Storage.set({ key: 'token', value: token });
+}
 
-export { api, APIData };
+export { api, saveToken, onTokenLoaded, APIData };
