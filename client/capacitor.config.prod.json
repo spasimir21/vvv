@@ -1,6 +1,6 @@
 {
   "appId": "com.datsdevvv.fridge",
-  "appName": "Fridge App",
+  "appName": "Foody",
   "webDir": "dist",
   "bundledWebRuntime": false,
   "plugins": {

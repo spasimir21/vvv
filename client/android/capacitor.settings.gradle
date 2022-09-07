@@ -8,5 +8,11 @@ project(':capacitor-community-barcode-scanner').projectDir = new File('../node_m
 include ':capacitor-community-http'
 project(':capacitor-community-http').projectDir = new File('../node_modules/@capacitor-community/http/android')
 
+include ':capacitor-local-notifications'
+project(':capacitor-local-notifications').projectDir = new File('../node_modules/@capacitor/local-notifications/android')
+
 include ':capacitor-storage'
 project(':capacitor-storage').projectDir = new File('../node_modules/@capacitor/storage/android')
+
+include ':capacitor-keep-screen-on'
+project(':capacitor-keep-screen-on').projectDir = new File('../node_modules/capacitor-keep-screen-on/android')
