@@ -11,16 +11,16 @@ function getReverseDayDifference(date) {
 
 function HistoryItem({ isShown, setIsShown, product }) {
   return (
-    <div className='product_wrapper'>
-      <div className='product'>
-        <div className='image' style={{ backgroundImage: `url('${product.imageUrl}')` }}></div>
-        <div className='product_title'>
-          <div className='title'>{product.name}</div>
-          <div className='price'>{product.price} лв.</div>
+    <div className="product_wrapper">
+      <div className="product">
+        <div className="image" style={{ backgroundImage: `url('${product.imageUrl}')` }}></div>
+        <div className="product_title">
+          <div className="title">{product.name}</div>
+          <div className="price">{product.price} лв.</div>
         </div>
-        <div className='expiration-container'>
+        <div className="expiration-container">
           <p>{product.status == 'used' ? 'Used' : 'Thrown'}</p>
-          <p className='expire_date'>{getReverseDayDifference(product.expirationDate)} days ago</p>
+          <p className="expire_date">{getReverseDayDifference(product.removeDate)} days ago</p>
         </div>
       </div>
     </div>
