@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Fridge App</string>
-    <string name="title_activity_main">Fridge App</string>
-    <string name="package_name">fridge.app</string>
-    <string name="custom_url_scheme">fridge.app</string>
+    <string name="app_name">Foody</string>
+    <string name="title_activity_main">Foody</string>
+    <string name="package_name">com.datsdevvv.foody</string>
+    <string name="custom_url_scheme">com.datsdevvv.foody</string>
 </resources>
