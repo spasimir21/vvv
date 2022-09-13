@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Foody</string>
     <string name="title_activity_main">Foody</string>
-    <string name="package_name">com.datsdevvv.foody</string>
-    <string name="custom_url_scheme">com.datsdevvv.foody</string>
+    <string name="package_name">com.datsdevvv.fridge</string>
+    <string name="custom_url_scheme">com.datsdevvv.fridge</string>
 </resources>

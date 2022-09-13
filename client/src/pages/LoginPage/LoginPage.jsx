@@ -30,8 +30,13 @@ function LoginPage() {
       </div>
       <div className='login-form-container'>
         <div className='login-form-fields'>
-          <input type='text' placeholder='Email' value={email} onChange={event => setEmail(event.target.value)} />
-          <input type='password' placeholder='Password' value={password} onChange={event => setPassword(event.target.value)} />
+          <input type='email' placeholder='Email' value={email} onChange={event => setEmail(event.target.value)} />
+          <input
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={event => setPassword(event.target.value)}
+          />
         </div>
         <div className='login-form-redirection'>
           <p>Don't have an account?</p>

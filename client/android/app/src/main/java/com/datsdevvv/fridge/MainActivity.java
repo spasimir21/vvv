@@ -1,4 +1,4 @@
-package fridge.app;
+package com.datsdevvv.fridge;
 
 import com.getcapacitor.BridgeActivity;
 

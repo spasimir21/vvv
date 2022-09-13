@@ -11,8 +11,8 @@ project(':capacitor-community-http').projectDir = new File('../node_modules/@cap
 include ':capacitor-local-notifications'
 project(':capacitor-local-notifications').projectDir = new File('../node_modules/@capacitor/local-notifications/android')
 
+include ':capacitor-splash-screen'
+project(':capacitor-splash-screen').projectDir = new File('../node_modules/@capacitor/splash-screen/android')
+
 include ':capacitor-storage'
 project(':capacitor-storage').projectDir = new File('../node_modules/@capacitor/storage/android')
-
-include ':capacitor-keep-screen-on'
-project(':capacitor-keep-screen-on').projectDir = new File('../node_modules/capacitor-keep-screen-on/android')

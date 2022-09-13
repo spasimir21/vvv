@@ -8,7 +8,7 @@ import './RegisterPage.scss';
 import React, { useState } from 'react';
 
 function RegisterPage() {
-  const [registerResult, loading, sendRegister] = useRequest(registerUser);
+  const [_, loading, sendRegister] = useRequest(registerUser);
   const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
@@ -27,13 +27,18 @@ function RegisterPage() {
     <div className='register-page'>
       <div className='register-logo-group'>
         <LogoSVGComponent />
-        <p>Welcome</p>
+        <p>Create your account</p>
       </div>
       <div className='register-form-container'>
         <div className='register-form-fields'>
           <input type='text' placeholder='Username' value={username} onChange={event => setUsername(event.target.value)} />
-          <input type='text' placeholder='Email' value={email} onChange={event => setEmail(event.target.value)} />
-          <input type='password' placeholder='Password' value={password} onChange={event => setPassword(event.target.value)} />
+          <input type='email' placeholder='Email' value={email} onChange={event => setEmail(event.target.value)} />
+          <input
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={event => setPassword(event.target.value)}
+          />
         </div>
         <div className='register-form-redirection'>
           <p>Already have an account?</p>

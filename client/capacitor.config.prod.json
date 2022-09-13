@@ -2,10 +2,5 @@
   "appId": "com.datsdevvv.foody",
   "appName": "Foody",
   "webDir": "dist",
-  "bundledWebRuntime": false,
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0
-    }
-  }
+  "bundledWebRuntime": false
 }

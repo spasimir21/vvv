@@ -3,11 +3,6 @@
   "appName": "Foody",
   "webDir": "dist",
   "bundledWebRuntime": false,
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0
-    }
-  },
   "server": {
     "url": "http://$IP$:1234",
     "cleartext": true

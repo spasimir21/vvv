@@ -14,31 +14,29 @@ import { Navigation } from './components/NavBar/NavBar';
 import { LoginPage } from './pages/LoginPage/LoginPage';
 import { RegisterPage } from './pages/RegisterPage/RegisterPage';
 import { useNavigate, Routes, Route } from 'react-router-dom';
-import { CapacitorKeepScreenOn } from 'capacitor-keep-screen-on';
-
-CapacitorKeepScreenOn.enable(); // Demo only
+import { SplashScreen } from '@capacitor/splash-screen';
 
 function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
     onTokenLoaded.then(() => {
-      console.log(api.token);
       if (api.token == null || api.token == 'null') navigate('/landing');
       else navigate('/products');
+      setTimeout(() => SplashScreen.hide(), 100);
     });
   }, []);
 
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        <Route path='/landing' element={<LandingPage />} />
-        <Route path='/register' element={<RegisterPage />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/products' element={<ProductsPage />} />
-        <Route path='/history' element={<HistoryPage />} />
-        <Route path='/scan' element={<ScanPage />} />
-        <Route path='/details/:barcode' element={<ProductDetailsPage />} />
+        <Route path="/landing" element={<LandingPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/history" element={<HistoryPage />} />
+        <Route path="/scan" element={<ScanPage />} />
+        <Route path="/details/:barcode" element={<ProductDetailsPage />} />
       </Routes>
     </ThemeProvider>
   );

@@ -8,19 +8,12 @@ export const LandingPage = () => {
   return (
     <section className='landing-page'>
       <div className='landing-wrap'>
-        <div className='image'>
-          <LandingSVGComponent />
-        </div>
+        <LandingSVGComponent />
         <div className='landing-text'>
           <SVGComponent />
-          <div className='landing-p-container'>
-            <p>Decrease the amount of wasted food Help the planet now</p>
-          </div>
+          <p class='landing-p'>Decrease the amount of wasted food Help the planet now</p>
         </div>
       </div>
-      {/* <a href="/">
-        Get Started
-      </a> */}
       <Link to='/register'>Get started</Link>
     </section>
   );
