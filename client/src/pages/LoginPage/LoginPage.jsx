@@ -1,14 +1,14 @@
-import { LogoSVGComponent } from '../../components/Svg/LogoSVGComponent';
+import { FoodyLogoSVG } from '../../assets/svg_react/FoodyLogoSVG';
 import { useRequest } from '../../hooks/useRequest';
-import { loginUser } from '../../lib/api/user';
 import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../../lib/api/user';
 import { saveToken } from '../../lib/api/api';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.scss';
 
 function LoginPage() {
-  const [loginResult, loading, sendLogin] = useRequest(loginUser);
+  const [_, loading, sendLogin] = useRequest(loginUser);
   const navigate = useNavigate();
 
   const [password, setPassword] = useState('');
@@ -25,7 +25,7 @@ function LoginPage() {
   return (
     <div className='login-page'>
       <div className='login-logo-group'>
-        <LogoSVGComponent />
+        <FoodyLogoSVG />
         <p>Welcome back</p>
       </div>
       <div className='login-form-container'>

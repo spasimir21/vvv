@@ -1,11 +1,11 @@
-import { LogoSVGComponent } from '../../components/Svg/LogoSVGComponent';
+import { FoodyLogoSVG } from '../../assets/svg_react/FoodyLogoSVG';
 import { useRequest } from '../../hooks/useRequest';
 import { registerUser } from '../../lib/api/user';
 import { useNavigate } from 'react-router-dom';
 import { saveToken } from '../../lib/api/api';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './RegisterPage.scss';
-import React, { useState } from 'react';
 
 function RegisterPage() {
   const [_, loading, sendRegister] = useRequest(registerUser);
@@ -26,7 +26,7 @@ function RegisterPage() {
   return (
     <div className='register-page'>
       <div className='register-logo-group'>
-        <LogoSVGComponent />
+        <FoodyLogoSVG />
         <p>Create your account</p>
       </div>
       <div className='register-form-container'>

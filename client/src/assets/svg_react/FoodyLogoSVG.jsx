@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const LogoSVGComponent = props => (
+const FoodyLogoSVG = props => (
   <svg width={162} height={94} viewBox='0 0 162 94' fill='none' xmlns='http://www.w3.org/2000/svg' {...props}>
     <path
       d='M3.99452 9.76361C2.91107 10.4522 2.00113 11.3767 1.33024 12.4714C-1.07186 16.4364 0.466565 21.1983 0.697906 21.8791C0.697906 21.8791 4.249 36.6793 15.2069 34.9617C17.821 34.0372 19.4211 32.5866 20.3465 30.9155C23.3809 25.4148 19.4366 18.1501 19.1551 17.6627C18.8736 17.1753 18.6153 16.7768 18.4457 16.5293C17.9213 15.7556 12.7122 8.24336 6.46602 9.00155C5.6062 9.11373 4.76952 9.36904 3.99452 9.76361Z'
@@ -45,4 +45,4 @@ const LogoSVGComponent = props => (
   </svg>
 );
 
-export { LogoSVGComponent };
+export { FoodyLogoSVG };

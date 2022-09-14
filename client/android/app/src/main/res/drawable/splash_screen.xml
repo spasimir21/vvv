@@ -6,11 +6,6 @@
         </shape>
     </item>
 
-    <!--<item>
-        <bitmap
-            android:gravity="center"
-            android:src="@drawable/foody_logo_full" />
-    </item>-->
     <item
         android:gravity="center"
         android:drawable="@drawable/ic_foody_logo_full" />

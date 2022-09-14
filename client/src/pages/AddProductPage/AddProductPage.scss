@@ -1,6 +1,6 @@
 $main_color: #336559;
 
-.product-details-page {
+.add-product-page {
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
@@ -41,7 +41,7 @@ $main_color: #336559;
   outline: none;
 }
 
-.product-details-buttons {
+.add-product-buttons {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -55,8 +55,6 @@ $main_color: #336559;
 }
 
 .used {
-  //     width: 16px;
-  //   height: 12px;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -74,9 +72,8 @@ $main_color: #336559;
   text-align: left;
   margin: 8px;
 }
+
 .delete {
-  //     width: 16px;
-  //   height: 12px;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -95,10 +92,12 @@ $main_color: #336559;
   margin: 8px;
   border: 1px solid #eb574c;
 }
+
 .bin {
   width: 12px;
   height: 14px;
 }
+
 .tick {
   width: 16px;
   height: 12px;

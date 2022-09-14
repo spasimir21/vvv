@@ -4,7 +4,7 @@ $seconary_color: #ef864f;
 $third_color: #f7cf7f;
 $background_color: #f9f9f9;
 
-.history-page {
+.products-page {
   display: flex;
   flex-flow: column nowrap;
   gap: 28px;
@@ -13,13 +13,13 @@ $background_color: #f9f9f9;
   padding: 28px 28px 90px 28px;
 }
 
-.history-page-title {
+.products-page-title {
   font-size: 20px;
   color: $main_color;
   font-weight: 600;
 }
 
-.history-page-list {
+.products-page-list {
   display: flex;
   flex-flow: column nowrap;
   gap: 16px;

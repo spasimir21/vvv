@@ -1,13 +1,13 @@
 import { scanBarcode } from '../../lib/barcodeScanner';
-import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import './ScanPage.scss';
 
-export const ScanPage = () => {
+function ScanPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    scanBarcode().then(barcode => setTimeout(() => navigate(`/details/${barcode}`), 0));
+    scanBarcode().then(barcode => setTimeout(() => navigate(`/add/${barcode}`), 0));
   }, []);
 
   return (
@@ -22,4 +22,6 @@ export const ScanPage = () => {
       </div>
     </div>
   );
-};
+}
+
+export { ScanPage };

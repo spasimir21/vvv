@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import './ProductPage.scss';
-// import {Products} from '../../components/Products/Products';
-import { Product } from '../../components/Product/Product';
 import { Navigation } from '../../components/NavBar/NavBar';
-import { useRequest } from '../../hooks/useRequest';
+import { Product } from '../../components/Product/Product';
 import { getProducts } from '../../lib/api/product';
-import { LocalNotifications } from '@capacitor/local-notifications';
+import { useRequest } from '../../hooks/useRequest';
+import React, { useEffect, useState } from 'react';
+import { useReload } from '../../hooks/useReload';
+import './ProductsPage.scss';
 
 const ProductsPage = () => {
   const [productsResult, loading, sendLoadProducts] = useRequest(getProducts);
-  const [reloadTrigger, setReloadTrigger] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const reload = useReload();
 
   useEffect(() => {
-    sendLoadProducts({}).then(result => {});
+    sendLoadProducts({});
   }, []);
 
   return (
@@ -35,9 +34,10 @@ const ProductsPage = () => {
                     onRemove={() => {
                       productsResult.result.products.splice(index, 1);
                       setSelectedIndex(-1);
-                      setReloadTrigger(!reloadTrigger);
+                      reload();
                     }}
-                    product={product}></Product>
+                    product={product}
+                  ></Product>
                 ))}
         </div>
       </div>

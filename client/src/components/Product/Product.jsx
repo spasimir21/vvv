@@ -1,9 +1,10 @@
+import { IconDeleteSVG } from '../../assets/svg_react/icons/IconDeleteSVG';
+import { IconUsedSVG } from '../../assets/svg_react/icons/IconUsedSVG';
+import { removeProduct } from '../../lib/api/product';
+import { useRequest } from '../../hooks/useRequest';
+import SvgIcon from '@mui/material/SvgIcon';
 import React, { useEffect } from 'react';
 import './Product.scss';
-import { IconUsed } from '../../assets/IconUsed';
-import { IconDelete } from '../../assets/IconDelete';
-import { useRequest } from '../../hooks/useRequest';
-import { removeProduct } from '../../lib/api/product';
 
 function getDayDifference(date) {
   return Math.ceil((date - Date.now()) / (1000 * 3600 * 24));
@@ -35,8 +36,11 @@ function Product({ isShown, setIsShown, product, onRemove }) {
           onClick={() => {
             sendRemove({ productId: product.id, status: 'used' });
             onRemove();
-          }}>
-          <IconUsed className='tick' />
+          }}
+        >
+          <SvgIcon>
+            <IconUsedSVG className='tick' />
+          </SvgIcon>
           Use
         </div>
         <div
@@ -44,8 +48,11 @@ function Product({ isShown, setIsShown, product, onRemove }) {
           onClick={() => {
             sendRemove({ productId: product.id, status: 'thrown' });
             onRemove();
-          }}>
-          <IconDelete className='bin' />
+          }}
+        >
+          <SvgIcon>
+            <IconDeleteSVG className='bin' />
+          </SvgIcon>
           Throw
         </div>
       </div>

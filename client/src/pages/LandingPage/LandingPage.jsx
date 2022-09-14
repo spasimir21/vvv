@@ -1,20 +1,21 @@
-import './LandingPage.scss';
-// import image from "../../assets/landing-image.png";
-import SVGComponent from '../../components/FoodySvg';
-import LandingSVGComponent from '../../components/FoodyLanding';
+import { FoodyLandingSVG } from '../../assets/svg_react/FoodyLandingSVG';
+import { LandingSVG } from '../../assets/svg_react/LandingSVG';
 import { Link } from 'react-router-dom';
+import './LandingPage.scss';
 
-export const LandingPage = () => {
+function LandingPage() {
   return (
     <section className='landing-page'>
       <div className='landing-wrap'>
-        <LandingSVGComponent />
+        <LandingSVG />
         <div className='landing-text'>
-          <SVGComponent />
-          <p class='landing-p'>Decrease the amount of wasted food Help the planet now</p>
+          <FoodyLandingSVG />
+          <p className='landing-p'>Decrease the amount of wasted food Help the planet now</p>
         </div>
       </div>
       <Link to='/register'>Get started</Link>
     </section>
   );
-};
+}
+
+export { LandingPage };

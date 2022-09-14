@@ -22,7 +22,7 @@ type APIRequest<TParams, TResult> = (api: APIData, params: TParams) => Promise<R
 function createRequest<TParams, TResult>(options: RequestOptions<TParams, TResult>): APIRequest<TParams, TResult> {
   return async (api: APIData, params: TParams) => {
     try {
-      const requestInit: RequestInit = {
+      const requestInit: any = {
         method: options.method,
         headers: {
           'Content-Type': 'application/json'
@@ -36,7 +36,6 @@ function createRequest<TParams, TResult>(options: RequestOptions<TParams, TResul
 
       return await req.json();
     } catch (error) {
-      console.log(error);
       return { success: false, error: 'Network Error' };
     }
   };

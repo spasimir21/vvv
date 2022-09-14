@@ -3,6 +3,7 @@ $main_color: #336559;
 $seconary_color: #ef864f;
 $third_color: #f7cf7f;
 $background_color: #f9f9f9;
+
 .product_wrapper {
   display: flex;
   flex-direction: column;
@@ -10,6 +11,7 @@ $background_color: #f9f9f9;
   border-radius: 5px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.07);
 }
+
 .product {
   display: flex;
   flex-direction: row;
@@ -17,10 +19,12 @@ $background_color: #f9f9f9;
   justify-content: space-around;
   align-items: center;
 }
+
 .product_title {
   flex-direction: column;
   text-overflow: ellipsis;
 }
+
 .product_title .title {
   color: $main_color;
   font-weight: 600;
@@ -31,6 +35,7 @@ $background_color: #f9f9f9;
   text-align: left;
   text-overflow: ellipsis;
 }
+
 .product_title .price {
   color: #9f9f9f;
   font-weight: 600;
@@ -43,6 +48,7 @@ $background_color: #f9f9f9;
   text-align: left;
   padding-top: 2px;
 }
+
 .expire_date {
   color: #eb574c;
   font-size: 12px;
@@ -53,11 +59,13 @@ $background_color: #f9f9f9;
   letter-spacing: normal;
   text-align: left;
 }
+
 .notshown {
   height: 0;
   overflow: hidden;
   transition: 0.3s;
 }
+
 .show {
   height: 60px;
   transition: 0.3s;
@@ -65,9 +73,8 @@ $background_color: #f9f9f9;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .used {
-  //     width: 16px;
-  //   height: 12px;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -85,9 +92,8 @@ $background_color: #f9f9f9;
   text-align: left;
   margin: 8px;
 }
+
 .delete {
-  //     width: 16px;
-  //   height: 12px;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -111,10 +117,12 @@ $background_color: #f9f9f9;
   width: 12px;
   height: 14px;
 }
+
 .tick {
   width: 16px;
   height: 12px;
 }
+
 .image {
   width: 57px;
   height: 56px;

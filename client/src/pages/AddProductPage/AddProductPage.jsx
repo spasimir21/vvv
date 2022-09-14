@@ -1,14 +1,15 @@
-import './ProductDetailsPage.scss';
-import React, { useEffect } from 'react';
-import TextField from '@mui/material/TextField';
-import { IconUsed } from '../../assets/IconUsed';
-import { IconDelete } from '../../assets/IconDelete';
-import { useParams } from 'react-router-dom';
-import React, { useState, useEffect, useRef } from 'react';
+import { IconDeleteSVG } from '../../assets/svg_react/icons/IconDeleteSVG';
+import { IconUsedSVG } from '../../assets/svg_react/icons/IconUsedSVG';
 import { getProductDetails } from '../../lib/barcodeScanner';
-import { useNavigate } from 'react-router-dom';
-import { addProduct } from '../../lib/api/product';
 import { useRequest } from '../../hooks/useRequest';
+import React, { useState, useEffect } from 'react';
+import { addProduct } from '../../lib/api/product';
+import TextField from '@mui/material/TextField';
+import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import SvgIcon from '@mui/material/SvgIcon';
+import React, { useEffect } from 'react';
+import './AddProductPage.scss';
 
 function formatDate(date) {
   var d = new Date(date),
@@ -22,7 +23,7 @@ function formatDate(date) {
   return [year, month, day].join('-');
 }
 
-function ProductDetailsPage() {
+function AddProductPage() {
   const [productDetails, setProductDetails] = useState(null);
   const [expDate, setExpDate] = useState(formatDate(new Date()));
   const [_, __, sendAdd] = useRequest(addProduct);
@@ -38,7 +39,7 @@ function ProductDetailsPage() {
   }, []);
 
   return (
-    <div className='product-details-page'>
+    <div className='add-product-page'>
       {productDetails == null ? (
         'Loading...'
       ) : (
@@ -72,7 +73,7 @@ function ProductDetailsPage() {
               <p>лв.</p>
             </div>
           </div>
-          <div className='product-details-buttons'>
+          <div className='add-product-buttons'>
             <div
               className='used'
               onClick={() => {
@@ -85,12 +86,17 @@ function ProductDetailsPage() {
                   barcode
                 });
                 navigate('/products');
-              }}>
-              <IconUsed className='tick' />
+              }}
+            >
+              <SvgIcon>
+                <IconUsedSVG className='tick' />
+              </SvgIcon>
               Add
             </div>
             <div className='delete' onClick={() => navigate('/products')}>
-              <IconDelete className='bin' />
+              <SvgIcon>
+                <IconDeleteSVG className='bin' />
+              </SvgIcon>
               Close
             </div>
           </div>
@@ -100,4 +106,4 @@ function ProductDetailsPage() {
   );
 }
 
-export { ProductDetailsPage };
+export { AddProductPage };

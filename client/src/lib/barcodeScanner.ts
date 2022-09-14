@@ -7,6 +7,15 @@ interface Product {
   imageSrc: string;
 }
 
+async function acquireCameraPermissions() {
+  const permission = await BarcodeScanner.checkPermission({ force: true });
+  if (permission.granted) return true;
+
+  if (permission.denied && !permission.asked) BarcodeScanner.openAppSettings();
+
+  return false;
+}
+
 async function scanBarcode() {
   BarcodeScanner.hideBackground();
 
@@ -15,6 +24,7 @@ async function scanBarcode() {
   return result.hasContent ? result.content : null;
 }
 
+// TODO: Select name based on both rating and length
 async function getProductNameFromBarcode(barcode: string) {
   const res = await Http.request({
     method: 'GET',
@@ -27,6 +37,7 @@ async function getProductNameFromBarcode(barcode: string) {
 
   if (productRow == null) return null;
 
+  // @ts-ignore
   const productName = productRow.querySelectorAll('td')[2].textContent.trim();
 
   return productName;
@@ -47,7 +58,8 @@ async function getProductImageFromName(productName: string) {
     method: 'GET',
     url: `https://www.google.com/search?q=${encodeURIComponent(productName)}&tbm=isch`,
     headers: {
-      'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36',
+      'User-Agent':
+        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36',
       'Cookie': 'CONSENT=YES+'
     }
   });
@@ -80,7 +92,7 @@ async function getProductImageFromName(productName: string) {
   return null;
 }
 
-async function getProductDetails(barcode: string): Promise<Product> {
+async function getProductDetails(barcode: string): Promise<Product | null> {
   try {
     const productName = await getProductNameFromBarcode(barcode);
     if (productName == null) return null;
@@ -94,4 +106,4 @@ async function getProductDetails(barcode: string): Promise<Product> {
   }
 }
 
-export { scanBarcode, getProductDetails, Product };
+export { acquireCameraPermissions, scanBarcode, getProductDetails, Product };
